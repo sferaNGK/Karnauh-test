@@ -251,7 +251,7 @@ function addInformationBlock(title, description, pluses, problems, professions) 
                 <p>${problems}</p>
             </div>
         </div>
-        <p><span>Популярные профессии:</span> ${professions}</p>
+        <p class="professions"><span>Популярные профессии:</span> ${professions}</p>
     </div>`)
     document.querySelector('i').addEventListener("click", () => {
         document.body.removeChild(document.querySelector('.information'))
