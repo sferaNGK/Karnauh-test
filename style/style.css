@@ -1,0 +1,176 @@
+@font-face {
+    src: url("../fonts/cyrillicround.ttf");
+    font-family: CyrRound;
+}
+@font-face {
+    src: url("../fonts/BloggerSans.ttf");
+    font-family: BloggerSans;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -moz-user-select: none;
+}
+
+body {
+    background-image: url("../img/bg.jpg");
+    background-size: cover;
+}
+
+h1 {
+    position: absolute;
+    top: 5%;
+    left: 9%;
+    font-family: CyrRound, serif;
+    font-size: 6.2vh;
+}
+
+h2 {
+    position: absolute;
+    top: 26%;
+    left: 33.5%;
+    font-family: CyrRound, serif;
+    font-size: 3.5vh;
+    line-height: 4.2vh;
+}
+
+form {
+    position: absolute;
+    top: 40%;
+    left: 33%;
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+}
+
+.check-row {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    background: rgb(107, 178, 170);
+    color: white;
+    border-radius: 1vw;
+    margin-bottom: 2.5vh;
+    padding: 1vh;
+}
+
+.check-row label {
+    font-family: BloggerSans, serif;
+    font-size: 3vh;
+    margin-left: 1vw;
+    cursor: pointer;
+}
+
+input[type=radio] {
+    width: 5vh;
+    height: 5vh;
+}
+
+#submit, #reload {
+    font-family: CyrRound, serif;
+    font-size: 3vh;
+    color: white;
+    background: #03b100;
+    align-self: center;
+    width: max-content;
+    height: max-content;
+    padding: 1vh 2vw;
+    margin-top: 2.5vh;
+    border: none;
+    border-radius: 3vw;
+    cursor: pointer;
+    transition: .25s;
+}
+
+#reload {
+    text-decoration: none;
+    position: absolute;
+    top: 25%;
+    left: 49.4%;
+    transform: translateX(-50%);
+    padding: 1.25vh 2.5vw;
+    font-size: 4vh;
+}
+
+#submit:disabled {
+    background: rgba(35, 110, 34, 0.5);
+    cursor: no-drop;
+}
+
+.information {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    padding: 2vh 2vw;
+    border-radius: 1.5vw 0 0 1.5vw;
+    background: white;
+    box-shadow: 0 0 8px 0 rgba(109, 109, 109, 0.5);
+    width: 75%;
+    max-height: 90%;
+    overflow-y: scroll;
+    z-index: 1;
+}
+
+.information::-webkit-scrollbar {
+    width: 0.5vw;
+    background: #17db2c;
+}
+
+.information::-webkit-scrollbar-thumb {
+    background: #00730c;
+    border-radius: 1vh;
+}
+
+.information .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.information h4 {
+    font-family: CyrRound, serif;
+    font-size: 4.5vh;
+    color: #00268c;
+}
+
+.information .table {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(2, 48%);
+}
+
+.information h6 {
+    font-family: CyrRound, serif;
+    font-size: 3.5vh;
+}
+
+.information .pluses h6 {
+    color: #1fbe30;
+}
+
+.information .problems h6 {
+    color: #d22323;
+}
+
+.information i {
+    font-size: 4vh;
+    cursor: pointer;
+}
+
+.information p {
+    text-align: justify;
+    font-family: BloggerSans, serif;
+    font-size: 2.75vh;
+    line-height: 4.5vh;
+}
+
+.information span {
+    text-decoration: underline;
+}
