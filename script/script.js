@@ -413,7 +413,7 @@ function addInformationBlock(title, description, pluses, problems, professions) 
         <p class="professions"><span>Популярные профессии:</span> ${professions}</p>
     </div>`)
     document.querySelector('i').addEventListener("click", () => {
-        document.body.style.backdropFilter = null;
+        document.querySelector('.blurFilter').style.visibility = "hidden";
         document.body.removeChild(document.querySelector('.information'));
         document.body.removeChild(document.querySelector('h2'));
         document.body.insertAdjacentHTML("afterend", `<a href="index.html" id="reload">Пройти ещё раз</a>`);
@@ -444,16 +444,16 @@ submitBtn.addEventListener("click", (e) => {
     }
     if (submitBtn.value < answerVariant.length) {
         testForm.insertAdjacentHTML("afterbegin", answerVariant[submitBtn.value]);
-        submitBtn.value = +submitBtn.value + 1
+        submitBtn.value = +submitBtn.value + 1;
         submitBtn.disabled = true;
         disableBtn()
     }
     else {
-        document.body.style.backdropFilter = "blur(1vh)"
-        testForm.removeChild(submitBtn)
+        document.querySelector('.blurFilter').style.visibility = "visible";
+        testForm.removeChild(submitBtn);
         for (let key of keys) {
             if (key.answer === answer) {
-                addInformationBlock(key.title, key.description, key.pluses, key.problems, key.professions)
+                addInformationBlock(key.title, key.description, key.pluses, key.problems, key.professions);
             }
         }
     }
