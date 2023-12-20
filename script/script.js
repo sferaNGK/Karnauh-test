@@ -299,7 +299,7 @@ const keys = [
             "Не любит, когда его прерывают, торопят. Остро переживает свои неудачи и разочарования. " +
             "Категоричен в суждениях и выводах, не склонен к компромиссам. По натуре аристократичен, " +
             "может допускать крайности в одежде, самовыражаясь таким образом (экстравагантность или, " +
-            "наоборот, элементы небрежности).Не любит делать много дел сразу. Недоверчив к непроверенной " +
+            "наоборот, элементы небрежности). Не любит делать много дел сразу. Недоверчив к непроверенной " +
             "информации. Критику своей внешности и привычек в быту переносит болезненно. Может допускать " +
             "небрежность в оформлении деловой документации.",
         professions: "директор по персоналу, преподаватель, артист, рекламный агент, специалист по PR и рекламе."
@@ -307,7 +307,8 @@ const keys = [
     {
         answer: "INFJ",
         title: "Гуманист",
-        pluses: "Хорошо разбирается во взаимоотношениях между людьми. Стремится к самоусовершенствованию, проявляет интерес к морально-философским проблемам.\n" +
+        pluses: "Хорошо разбирается во взаимоотношениях между людьми. Стремится к самоусовершенствованию, " +
+            "проявляет интерес к морально-философским проблемам.\n" +
             "Может оценить способности людей. Проявляет понимание, терпимость. " +
             "Может идти на компромиссы ради мира и согласия. Отзывчив и внимателен. " +
             "Принимает людей такими, какие они есть: прощает им их слабости и не пытается " +
@@ -412,15 +413,16 @@ function addInformationBlock(title, description, pluses, problems, professions) 
         <p class="professions"><span>Популярные профессии:</span> ${professions}</p>
     </div>`)
     document.querySelector('i').addEventListener("click", () => {
-        document.body.removeChild(document.querySelector('.information'))
-        document.body.removeChild(document.querySelector('h2'))
-        document.body.insertAdjacentHTML("afterend", `<a href="index.html" id="reload">Пройти ещё раз</a>`)
+        document.body.style.backdropFilter = null;
+        document.body.removeChild(document.querySelector('.information'));
+        document.body.removeChild(document.querySelector('h2'));
+        document.body.insertAdjacentHTML("afterend", `<a href="index.html" id="reload">Пройти ещё раз</a>`);
     })
 }
 
-const testForm = document.querySelector('form[name="test"]')
-const submitBtn = document.querySelector('#submit')
-let answer = ""
+const testForm = document.querySelector('form[name="test"]');
+const submitBtn = document.querySelector('#submit');
+let answer = "";
 
 testForm.insertAdjacentHTML("afterbegin", answerVariant[0]);
 
@@ -447,6 +449,7 @@ submitBtn.addEventListener("click", (e) => {
         disableBtn()
     }
     else {
+        document.body.style.backdropFilter = "blur(1vh)"
         testForm.removeChild(submitBtn)
         for (let key of keys) {
             if (key.answer === answer) {
